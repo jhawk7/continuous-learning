@@ -1,7 +1,7 @@
 # System-Design: Why is Redis so fast? 
 
 ## Background 
-- Redis stands for remote dictionary store; it can handle 100,00 QPS; typically used for in-memory cache (stores data in RAM (ns) and is faster thas disk (ms) 
+- Redis stands for remote dictionary store; it can handle 100,00 QPS; typically used for in-memory cache (stores data in RAM (ns) and is faster thas disk (ms)) 
 
 	<img src="../../img/why-is-redis-so-fast-1.png" alt="why-is-redis-so-fast-1" width="400"/>
 
