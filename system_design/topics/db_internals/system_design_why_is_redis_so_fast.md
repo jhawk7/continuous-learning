@@ -18,7 +18,7 @@
 
 ### Single Threaded Model
 - redis utilizes a single threaded model via an event queue, event loop, & event handlers for concurreny and non blocking io 
-	- this gives it the ability to deal with race conditions and provides isolation 
+	- this gives it the ability to deal with **race conditions** and provides **isolation**
 
 	<img src="../../img/why-is-redis-so-fast-3.png" alt="why-is-redis-so-fast-3" width="400"/>
 
