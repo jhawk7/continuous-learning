@@ -105,6 +105,13 @@ Cons:
 - uses linked list with size of the number of allowed requests; when enough time has passed, a request is removed from the list so that another can be made within the window of the last request
 
 
+**Bonus: Leaky Bucket**
+
+- the `leaky bucket algorithm` adds requests to a "bucket" as they arrive and **leaks** the requests at a constant rate to ensure a steady flow of data
+- if the bucket becomes too full (too many requests arrive too quickly), excess packets are discarded
+- this accounts for **bursts** in traffic
+
+
 ## Concurrency Considerations
 - we have to potential for race conditions and lost updates if threads are accessing the counter at the same time; we need `distributed locking` or `single threaded` processes to counteract this
 
