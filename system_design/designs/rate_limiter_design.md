@@ -94,7 +94,7 @@ Cons:
   <img src="../img/rate-limiter-design-6.png" alt="rate-limiter-design-6" width="400"/>
 
 - `fixed window` algorithm will allow a certain number of requests within a window without considering the time between individual requests
-- the number of requets is reset after the expiration of the window
+- the number of requets is reset after the expiration of the window; this allows users to game the system by stacking requests at the time boundary
 
 
 **Sliding window**
@@ -105,11 +105,18 @@ Cons:
 - uses linked list with size of the number of allowed requests; when enough time has passed, a request is removed from the list so that another can be made within the window of the last request
 
 
-**Bonus: Leaky Bucket**
+**Leaky Bucket**
 
 - the `leaky bucket algorithm` adds requests to a "bucket" as they arrive and **leaks** the requests at a constant rate to ensure a steady flow of data
 - if the bucket becomes too full (too many requests arrive too quickly), excess packets are discarded
-- this accounts for **bursts** in traffic
+- this is ideal for **smoothing traffic flow** (use cases like streaming platforms and payment processing)
+- however, this algorithm is **not** suitable for handling sudden bursts (as requests will be dropped completely)
+
+
+**Token Bucket**
+- the `token bucket algorithm` involves generating **tokens** at a fixed rate and storing them in a bucket; each requests consume a token while available
+- this algorithm properly handles short and occasional bursts of traffic while enforcing limits (logins attempts or search queries)
+- this algorithm also requires periodic token replenishment which may introduce minor overhead
 
 
 ## Concurrency Considerations
