@@ -94,7 +94,7 @@ Cons:
   <img src="../img/rate-limiter-design-6.png" alt="rate-limiter-design-6" width="400"/>
 
 - `fixed window` algorithm will allow a certain number of requests within a window without considering the time between individual requests
-- the number of requets is reset after the expiration of the window; this allows users to game the system by stacking requests at the time boundary
+- the number of requests is reset after the expiration of the window; this allows users to game the system by stacking requests at the time boundary
 
 
 **Sliding window**
